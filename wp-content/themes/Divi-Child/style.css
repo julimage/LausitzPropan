@@ -1,0 +1,237 @@
+/*
+Theme Name: Divi Child
+Template: Divi
+Author: Elegant Themes – edit by julimage
+Description: Anpassungen des Divi Themes für Lausitz Propan GmbH.
+ 
+/* =Ab hier kannst du deine CSS-Anpassungen eintragen
+
+### Farben ###
+Blau: #313c99;
+Orange: #f39c12;
+
+------------------------------------------------------- */
+
+
+/*--------------------------------------------------*/
+/*-----------------[global settigs]-----------------*/
+/*--------------------------------------------------*/
+
+body {
+	line-height: 13px;
+    font-family: "Lato",Arial,sans-serif;
+}
+
+p {
+	font-size: 21px;
+	line-height: 26px;
+}
+
+a {
+	color: #f39c12;
+	text-decoration: underline;
+}
+
+
+
+
+/* top-header */
+
+#top-header {
+	background-color: #313c99;
+	height: 50px;
+}
+
+
+/* Menu incl. Logo */
+
+#main-header {
+	padding: 26px 0 0 0;
+    box-shadow: none;
+}
+
+#logo {
+	max-height: 100%;
+}
+
+span.logo_helper {
+    vertical-align: top;
+}
+
+#top-menu li {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+
+/*--------------------------------------------------*/
+/*------------[Slim Horizontal Submenus]------------*/
+/*--------------------------------------------------*/
+
+.nav li ul {
+	background-color: #313c99;
+    visibility: hidden;
+    z-index: 9999;
+    position: fixed;
+	width: 1080px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left !important;
+    border: none;
+    box-shadow: none;
+}
+
+.nav li.et-reverse-direction-nav li ul {
+    right: 0;
+    top: auto;
+    background: #bae1fc;
+}
+#top-menu li li a {
+    width: 100%;
+}
+
+.et_header_style_left #et-top-navigation nav>ul>li>a, .et_header_style_split #et-top-navigation nav>ul>li>a {
+    padding-bottom: 26px;
+}
+
+
+
+/*--------------------------------------------------*/
+/*-----[GQ ADD TEXT MODULES OVER FULLWIDTH SECTION]-----*/
+/*--------------------------------------------------*/
+
+@media only screen and (min-width : 981px) {
+    .mp_column_2 {
+    		height: 169px;
+            margin-top: -169px;
+            background: rgba(255,255,255,0.8);
+            padding: 26px 13px;
+        }
+}
+ 
+@media only screen and (max-width : 980px) {
+    .mp_column_2 {
+            background: rgba(255,255,255,0.8);
+            padding: 26px 13px;
+        }
+}
+
+
+
+/* Abstände */
+
+/*.et_pb_section {
+	padding: 26px 0 13px 0!important;
+}*/
+
+
+h1, h2, h3 {
+	padding-bottom: 0;
+}
+
+h4 {
+	font-size: 21px;
+	font-weight: 600;
+	padding-bottom: 26px;
+}
+
+
+/* Header */
+
+/*.et_pb_row {
+    position: absolute;
+    bottom: 0;
+    margin: 0 328px;
+    padding: 0!important;
+}*/
+
+
+/*--------------------------------------------------*/
+/* Unternehmensgruppe*/
+/*--------------------------------------------------*/
+
+/* Größe der einzelnen Boxen (1/5)*/
+@media (min-width: 981px) {
+	.et_pb_gutters3 .et_pb_column_1_5, .et_pb_gutters3 .et_pb_row .et_pb_column_1_5, body .et_pb_gutters3.et_pb_row > .et_pb_column_1_5 {
+		width: 17.59%!important;
+	}
+}
+
+
+/* Info Boxes */
+.box-padding .et_pb_blurb_description {
+	padding: 0 13px 13px 13px;
+}
+
+
+
+/*--------------------------------------------------*/
+/*-------------------- FOOTING ---------------------*/
+/*--------------------------------------------------*/
+
+.footing p {
+	font-size: 16px;
+	color: #fff;
+	padding: 13px 0 0 0;
+}
+
+.footing a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/*--------------------------------------------------*/
+/*--------------------- FOOTER ---------------------*/
+/*--------------------------------------------------*/
+
+#main-footer p {
+    color: #fff;
+    font-size: 16px;
+}
+
+#footer-bottom {
+	padding: 13px 0px;
+    background-color: #313c99;
+}
+
+#footer-bottom a {
+	color: #fff;
+}
+
+#footer-bottom p {
+	padding-bottom: 0;
+}
+
+
+.et-social-icon a {
+	font-size: 16px;
+	color: #fff;
+}
+
+.et-social-facebook a.icon:before {
+	content: "\e0c1";
+	font-size: 32px;
+	vertical-align: middle;
+	padding-right: 13px;
+}
+
+
+
+/*--------------------------------------------------*/
+/*-----[GQ ADD TEXT MODULES OVER FULLWIDTH MAP]-----*/
+/*--------------------------------------------------*/
+ 
+@media only screen and (min-width : 981px) {
+    .mp_column_3 {
+    		height: 440px;
+            margin-top: -440px;
+            background: rgba(255,255,255,0.8);
+            padding: 26px 13px;
+            box-shadow: 0px 0px 150px 20px rgba(109, 109, 109, 0.2);}}
+ 
+@media only screen and (max-width : 980px) {
+    .mp_column_3 {
+            background: rgba(255,255,255,0.8);
+            padding: 26px 13px;}}
