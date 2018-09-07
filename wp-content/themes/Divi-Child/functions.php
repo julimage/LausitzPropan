@@ -14,7 +14,14 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 // END ENQUEUE PARENT ACTION
 
+// BEGIN ENQUEUE CHILD ACTION
 
+function my_custom_script_load(){
+	wp_enqueue_script( 'my-custom-script', get_stylesheet_directory_uri() . '/api-dieselpreis.js', array( 'jquery' ) );
+}
+add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
+
+// END ENQUEUE CHILD ACTION
 
 //Custom Theme Settings
 //Eingabe Diesel- und Gaspreis

@@ -56,7 +56,7 @@
 <!-- own top-header -->
 
 	<div id="top-header">
-		<div class="container clearfix"><?php echo get_option('diesel'); ?> | <?php echo get_option('gas'); ?> | Onlineshop</div>
+		<div class="container clearfix"><?php echo get_option('diesel'); ?> <div id="api-dieselpreis" style="width: 33px; display: inline-block;">&nbsp;</div> | <?php echo get_option('gas'); ?> | Onlineshop</div>    
 	</div>
 
 
