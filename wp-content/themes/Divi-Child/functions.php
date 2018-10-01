@@ -14,15 +14,6 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 
 // END ENQUEUE PARENT ACTION
 
-// BEGIN ENQUEUE CHILD ACTION
-
-function my_custom_script_load(){
-	wp_enqueue_script( 'my-custom-script', get_stylesheet_directory_uri() . '/api-dieselpreis.js', array( 'jquery' ) );
-}
-add_action( 'wp_enqueue_scripts', 'my_custom_script_load' );
-
-// END ENQUEUE CHILD ACTION
-
 //Custom Theme Settings
 //Eingabe Diesel- und Gaspreis
 add_action('admin_menu', 'add_gcf_interface');
@@ -53,5 +44,39 @@ function editglobalcustomfields() {
 	</div>
 	<?php
 }
-
 ?>
+<?php
+// DIESELPREIS TANKERKÖNIG API MIT PHP ABFRAGEN und in dieselpreis.json speichern
+function getDieselpreis() {
+	$theme_root = get_theme_root();
+	$filename = glob("$theme_root/Divi-Child/dieselpreis.json", GLOB_ONLYDIR);
+	if (file_exists($filename) && (time()-filemtime($filename) < 300)) {
+  		$filecontent = file_get_contents($filename);
+		$json_data = json_decode($filecontent,true);
+		$dieselpreis = $json_data;
+	} else {
+		$json = file_get_contents("https://creativecommons.tankerkoenig.de/json/prices.php?ids=134139b7-92d0-4066-ba13-b556cf4a1f0a&apikey=11862a1c-5d7a-5d30-7863-6253eae65692");  
+		$data = json_decode($json, true);
+		$dieselpreis = $data['prices']["134139b7-92d0-4066-ba13-b556cf4a1f0a"]['diesel'];
+		$fp = fopen($filename, 'w');
+		fwrite($fp, json_encode($dieselpreis));
+		fclose($fp);
+	}
+	// Dieselpreis mit hochgestellter Zahl
+    $dieselpreis_substr = substr($dieselpreis, 0, 4);
+	$dieselpreise_remaining_string = substr($dieselpreis, 4);
+	$dieselpreis_final = $dieselpreis_substr.'<sup>'.$dieselpreise_remaining_string.'</sup>';
+	return $dieselpreis_final;
+}
+// ENDE DIESELPREIS TANKERKÖNIG API MIT PHP ABFRAGEN 
+
+// Gaspreis mit hochgestellter Zahl 
+function getGas() {
+	$gas = get_option('gas');
+    $gas_substr = substr($gas, 0, 4);
+    $gas_remaining_string = substr($gas, 4);
+  	$gas_final = $gas_substr.'<sup>'.$gas_remaining_string.'</sup>';
+    return $gas_final;
+}
+?>
+

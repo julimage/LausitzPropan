@@ -56,7 +56,20 @@
 <!-- own top-header -->
 
 	<div id="top-header">
-		<div class="container clearfix"><?php echo get_option('diesel'); ?> <div id="api-dieselpreis" style="width: 33px; display: inline-block;">&nbsp;</div> | <?php echo get_option('gas'); ?> | Onlineshop</div>    
+    	<div id="oberer-balken" class="container clearfix">	
+            <div id="sprit-box-gas"> 
+                <div class="spriticon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/flame.png"alt=""></div>
+                <div class="spritlabel">autogas</div>
+                <div class="spritpreis"><?php echo getGas(); ?></div>
+            </div>
+            <div id="sprit-box-diesel"> 
+                <div class="spriticon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/diesel.png"alt=""></div>
+                <div class="spritlabel">diesel</div>
+                <div id="php-dieselpreis" class="spritpreis"><?php echo getDieselpreis(); ?></div>
+            </div>	
+            <div id="box-shop"><a href="http://gasfritzen.de" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/gasfritzen-header.png" alt=""></a>
+            </div>
+        </div>    
 	</div>
 
 

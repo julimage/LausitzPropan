@@ -37,8 +37,231 @@ a {
 /* top-header */
 
 #top-header {
+	background-color: #ffffff;
+	height: 80px;
+	border-top: 10px solid #313c99;
+}
+
+#oberer-balken {	
+}
+
+#sprit-box-gas, #sprit-box-diesel {
+	position: absolute;
+	margin-top: -10px;
 	background-color: #313c99;
-	height: 50px;
+	width: 190px;
+	height: 40px;
+	padding: 2px 5px 5px 5px;
+
+}
+#sprit-box-gas {
+	right: 410px;
+}
+
+#sprit-box-diesel {
+	right: 200px;
+}
+
+#box-shop {
+	position: absolute;
+	right: 0;
+	background-color: #f39c12;
+	width: 180px;
+	height: 70px;
+	margin-top: -20px;
+}
+
+#box-shop img {
+	width: 100%;
+	height: auto;
+	padding-top: 12px;
+}
+
+.spriticon, .spritlabel, .spritpreis {
+	height: 30px;
+	position: relative;
+	float: left;	
+}
+
+.spriticon {
+	height: 30px;
+	margin-right: 10px;	
+	width: auto;
+}
+
+
+.spritlabel{
+	height: 30px;	
+	width: 75px;
+	margin-right: 10px;
+	padding-top: 10px;
+	border-right: 3px solid #ffffff;
+	font-size: 13px;
+	color: #ffffff;
+	text-transform: uppercase;	
+}
+
+.spritpreis {
+	height: 30px;
+	padding-top: 8px;
+	font-size: 20px;
+	color: #ffffff;
+
+}
+
+sup {
+	font-size: 12px;
+	bottom: 0.4em;
+}
+
+@media only screen and (max-width : 980px) {
+    #sprit-box-gas, #sprit-box-diesel {
+    	margin: 0;
+	}
+	#box-shop {
+    	margin: -10px;
+	}
+	
+	#sprit-box-diesel {
+		right: 190px;
+	}
+	
+	#sprit-box-gas {
+		right: 400px;
+	}	
+	
+}
+
+@media only screen and (max-width : 700px) {
+    #sprit-box-gas, #sprit-box-diesel {
+		width: 160px;
+    	margin: 0;
+		height: 35px;
+	    padding: 6px 5px 5px 5px;
+	}
+	#box-shop {
+    	margin: -10px;
+		width: 150px;
+		height: 55px;
+	}
+	
+	#sprit-box-diesel {
+		right: 150px;
+	}
+	
+	#sprit-box-gas {
+		right: 320px;
+	}	
+	
+	.spriticon, .spritlabel, .spritpreis {
+		height: 25px;
+		position: relative;
+		float: left;	
+	}
+
+	.spriticon {
+		height: 20px;
+		margin-right: 10px;	
+		width: auto;
+	
+	}
+	.spriticon img {
+		height: 25px;
+		padding-top: 0px;
+		padding-bottom: 3px;
+	}
+
+
+	.spritlabel{
+		height: 20px;	
+		width: 65px;
+		padding-top: 5px;
+		font-size: 11px;
+		border-right: 2px solid #ffffff;
+	}
+
+	.spritpreis {
+		height: 20px;
+		padding-top: 3px;
+		font-size: 16px;
+	}
+
+	sup {
+		font-size: 10px;
+		bottom: 0.4em;
+	}	
+}
+
+@media only screen and (max-width : 580px) {
+	#top-header {
+		height: 90px;
+	}	
+    
+	#sprit-box-gas, #sprit-box-diesel {
+		width: 140px;
+    	margin: 0;
+		height: 25px;
+	    padding: 0px 5px;
+	}
+	#box-shop {
+		width: 140px;
+    	margin: 50px 0 0 0;
+		height: 30px;
+		right: 0;
+	}
+	
+	#box-shop img {
+		width: 120px;
+	    padding-top: 2px;
+		margin-left: 10px;
+
+	}
+	#sprit-box-diesel {
+		right: 0;
+		margin-top: 25px;
+	}
+	
+	#sprit-box-gas {
+		right: 0;
+	}	
+	
+	.spriticon, .spritlabel, .spritpreis {
+		height: 25px;
+		position: relative;
+		float: left;	
+	}
+
+	.spriticon {
+		height: 100%;
+		margin-right: 5px;	
+		width: 20px;
+	
+	}
+	.spriticon img {
+		height: 20px;
+		padding-top: 0px;
+		padding-bottom: 3px;
+	}
+
+
+	.spritlabel{
+		height: 20px;	
+		width: 50px;
+		padding-top: 5px;
+		font-size: 11px;
+		border-right: 0px;
+	}
+
+	.spritpreis {
+		height: 20px;
+		padding-top: 3px;
+		font-size: 16px;
+	}
+
+	sup {
+		font-size: 10px;
+		bottom: 0.4em;
+	}	
 }
 
 
