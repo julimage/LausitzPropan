@@ -79,4 +79,3 @@ function getGas() {
     return $gas_final;
 }
 ?>
-

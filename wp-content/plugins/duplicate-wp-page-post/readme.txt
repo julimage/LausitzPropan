@@ -1,14 +1,13 @@
 === Duplicate Page and Post ===
 Contributors: arjunthakur
-Donate link: http://www.hisysinfotech.com/
 Tags: duplicate post, duplicate page, duplicate custom posts, wordpress page duplicator, wordpress post duplicator, page duplicate, page and post clone, page clone, post clone, wp post clone.
 Requires at least: 3.5
-Tested up to: 4.9.5
-Stable tag: 2.2
+Tested up to: 4.9.8
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Duplicate posts, pages and custom posts or page and post clone.
+Duplicate post, Duplicate page and Duplicate custom post or clone page and clone post.
 
 == Description ==
 

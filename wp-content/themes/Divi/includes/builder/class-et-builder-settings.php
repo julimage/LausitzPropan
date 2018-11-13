@@ -35,7 +35,7 @@ class ET_Builder_Settings {
 
 	public function __construct() {
 		if ( null !== self::$_instance ) {
-			wp_die( get_class( $this ) . 'is a singleton class. You cannot create a another instance.' );
+			wp_die( esc_html( get_class( $this ) . 'is a singleton class. You cannot create a another instance.' ) );
 		}
 
 		$this->_initialize();
@@ -53,6 +53,7 @@ class ET_Builder_Settings {
 				'id'          => 'et_pb_enable_ab_testing',
 				'label'       => esc_html__( 'Enable Split Testing', 'et_builder' ),
 				'autoload'    => false,
+				'default'     => 'off',
 				'class'       => 'et-pb-visible',
 				'affects'     => array(
 					'et_pb_ab_bounce_rate_limit',
@@ -87,6 +88,7 @@ class ET_Builder_Settings {
 				'label'           => esc_html__( 'Stats refresh interval', 'et_builder' ),
 				'autoload'        => false,
 				'depends_show_if' => 'on',
+				'default'         => 'hourly',
 				'options'         => array(
 					'hourly' => esc_html__( 'Hourly', 'et_builder' ),
 					'daily'  => esc_html__( 'Daily', 'et_builder' ),
@@ -576,15 +578,16 @@ class ET_Builder_Settings {
 	}
 
 	/**
-	 * Returns all taxonomy terms for a give post.
+	 * Returns all taxonomy terms for a given post.
 	 *
 	 * @param int $post_id Post ID.
 	 * @param string $taxonomy Taxonomy name.
 	 *
-	 * @return array
+	 * @return string
 	 */
 	protected static function _get_object_terms( $post_id, $taxonomy ) {
-		return implode( ',' , wp_get_object_terms( $post_id, $taxonomy, array( 'fields' => 'ids' ) ) );
+		$terms = wp_get_object_terms( $post_id, $taxonomy, array( 'fields' => 'ids' ) );
+		return is_array( $terms ) ? implode( ',', $terms ) : '';
 	}
 
 	public static function get_registered_post_type_options() {
@@ -790,7 +793,7 @@ class ET_Builder_Settings {
 
 		foreach ( $tabs as $tab_slug => $tab_name ) {
 			$sections[ $tab_slug ] = array(
-				'title'    => et_esc_previously( $tab_name ),
+				'title'    => et_core_esc_previously( $tab_name ),
 				'contents' => array(
 					'main' => esc_html__( 'Main', 'et_builder' ),
 				),

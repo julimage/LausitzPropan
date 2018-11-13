@@ -4,8 +4,8 @@ Plugin Name: Duplicate Page and Post
 Plugin URI: https://wordpress.org/plugins/duplicate-wp-page-post/
 Description: This plugin quickly creates a clone of page or post
 Author: Arjun Thakur
-Author URI: http://www.hisysinfotech.com/
-Version: 2.2
+Author URI: https://profiles.wordpress.org/arjunthakur#content-plugins
+Version: 2.3
 License: GPLv2 or later
 Text Domain: dpp_wpp_page
 */
