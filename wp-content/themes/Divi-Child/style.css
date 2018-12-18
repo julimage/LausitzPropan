@@ -19,6 +19,7 @@ Orange: #f39c12;
 
 body {
 	line-height: 13px;
+	font-family: "Lato" !important;
 }
 
 p {
@@ -357,10 +358,10 @@ span.logo_helper {
 
 /* Abstände */
 
-/*.et_pb_section {
-	padding: 26px 0 13px 0!important;
-}*/
-
+.main_section {
+	padding-top: 39px!important;
+	padding-bottom: 26px!important;
+}
 
 
 
